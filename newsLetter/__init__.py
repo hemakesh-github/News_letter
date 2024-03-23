@@ -9,7 +9,7 @@ JWT_KEY = "z28c9DEaW9J4vvFsvg7-_Q"
 app = Flask(__name__)
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY')
-app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///C://Users//HEMAKESH//Documents//backend//flask_practice//News_letter//emails.db"
+app.config['SQLALCHEMY_DATABASE_URI'] = "sqlite:///News_letter//emails.db"
 app.config['MAIL_SERVER'] = 'smtp.googlemail.com'
 app.config['MAIL_PSOT'] = 587
 app.config['MAIL_USE_TLS'] = True
