@@ -18,9 +18,14 @@ def home():
     if form.validate_on_submit():
         email = form.email.data
         name = form.name.data
-        payload = {"email": email, "name": name, "exp": datetime.datetime.utcnow() + datetime.timedelta(seconds=1800)}
+        #till learn celery
+        subscriber = Subscribers(name = name, email = email)
+        db.session.add(subscriber)
+        db.session.commit()
+        #for mail verification
+        '''payload = {"email": email, "name": name, "exp": datetime.datetime.utcnow() + datetime.timedelta(seconds=1800)}
         encoded = jwt.encode(payload, JWT_KEY, algorithm="HS256")
-        send_verification_mail(encoded, email)
+        send_verification_mail(encoded, email)'''
         return render_template('success.html', email = email, name = name)
     return render_template('register.html', form = form)
 
