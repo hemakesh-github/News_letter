@@ -1,0 +1,300 @@
+body,html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-color: hsl(235, 18%, 26%);
+    font-size: 16px;
+    color: hsl(235, 18%, 26%);
+    display: flex;
+    flex-direction: column;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.error {
+    color: hsl(4, 100%, 67%);
+    border-color: hsl(4, 100%, 67%);
+}
+
+.admin-error{
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.admin-added{
+    font-size: 1.3rem;
+    text-align: center;
+    margin-top: 40px;
+    color: hsl(134, 100%, 67%);
+    border-color: hsl(134, 100%, 67%);
+}
+
+nav{
+    list-style: none;
+    width: 100vw;
+    position: fixed;
+    border-bottom: 1px solid black;
+}
+
+nav ul{
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+nav a{
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: hsl(4, 100%, 67%);
+}
+
+.msg{
+    text-align: center;
+}
+
+.main p a{
+    color: blue;
+    text-decoration:underline;
+}
+
+
+
+.container{
+   
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    height: 80%;
+    padding: 10px;
+    width: 62%;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 40px;
+}
+.success, .verified-status{
+    display: flex;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 42%;
+    padding: 10px;
+    width: 22%;
+    padding: 3%;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 40px;
+    font-size: 13px;
+}
+
+.verified-status{
+    align-items: center;
+    justify-content: center;
+}
+
+.image{
+    margin-right:10px;
+    background-image: url(images/illustration-sign-up-desktop.svg);
+    width: 410px;
+    height: 607px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.heading{
+    font-size: 3.5rem;
+    font-weight: 700;
+    padding: 15px 0px;
+}
+.success .heading{
+    font-size: 2.5rem;
+}
+
+.article{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 20%;
+    margin: 10px 0px 40px 0px;
+}
+span{
+    display: block;
+}
+
+.main{
+    width: 45%;
+    padding: 3.5rem;
+    height: 70%;
+}
+
+.admin{
+    padding-bottom: 20%;
+    height: 60%;
+
+}
+
+.admin form {
+    padding-top: 28%;
+}
+
+input {
+    height: 1.5rem;
+    width: 92%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: hsl(235, 18%, 26%);
+    cursor: pointer;
+}
+
+.sub-button, .dismiss-btn{
+    background-color: hsl(234, 29%, 20%);
+    height: 3.5rem;
+    width: 100%;
+    margin-top: 24px;
+    border: transparent;
+    color: white;
+    font-weight: 400;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.article span{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.main span{
+    margin-bottom: 13px;
+}
+.label{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 0.8rem;
+    margin-top: 8px;
+}
+
+button:hover, .sub-button:hover{
+    background-color: hsl(4, 100%, 67%);
+}
+
+
+.file-upload::-webkit-file-upload-button{
+    visibility: hidden;
+}
+
+.upload{
+    height: 1.5rem;
+    width: 92%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    margin-top: 8px;
+    font-size: 1rem;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    color: hsl(235, 18%, 26%);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.upload label{
+    cursor: pointer;
+}
+
+
+.file-inp-field input{
+    width: 90%;
+    height: 20px;
+    padding: 0;
+    padding-left: 40px;
+    border: 0px;
+    
+}
+
+
+
+
+.attribution{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    color: rgb(246, 238, 238);
+}
+
+@media (max-width: 426px){
+    *{
+        padding: 0px;
+    }
+    .container{
+        position: static;
+        flex-direction: column-reverse;
+        transform: translate(0,0);
+        width: 100%;
+        height: fit-content;
+        border-radius: 0px;
+        padding: 0px;
+
+    }
+    .main{
+        width: 96%;
+        padding: 7.5px;
+    }
+    .image{
+        background-position: top;
+        top:0px;
+        height: 290px;
+        width: 100%;
+        background-image: url(images/illustration-sign-up-mobile.svg);
+    }
+    .success, .verified-status{
+        
+        width: fit-content;
+        transform: translate(0,0);
+        position: static;
+        height: 100%;
+        border-radius: 0;
+        
+
+    } 
+
+    .dismiss-btn{
+        position: absolute;
+        bottom: 90px;
+        width: 80%;
+        align-self: center;
+    }
+    .attribution{
+        position: relative;
+    }
+}
+
+
+

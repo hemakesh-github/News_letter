@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% block content %}
+  <div class="success">
+    <div>
+      <img src="{{ url_for('static', filename = 'images/icon-success.svg') }}" alt="">
+    </div>
+    <div class="heading">
+      Thanks for subscribing!
+    </div>
+    <div class="confirm-msg">
+        A confirmation email has been sent to <b>{{email}}</b>
+        Please open it and click the button inside to confirm your subscription.
+    </div>
+    <a href="/home">
+      <button class="dismiss-btn">
+        Dismiss message
+      </button>
+    </a>
+    
+  </div>
+{% endblock content %}

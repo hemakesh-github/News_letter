@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% block content %}
+{% if status %}
+  <div class="verified-status">
+    <div>
+      <img src="{{ url_for('static', filename = 'images/icon-success.svg') }}" alt="">
+    </div>
+    <div class="heading">
+      Thanks for subscribing!
+    </div>
+    <div class="confirm-msg">
+       <b>{{email}}</b> Has been verified. <br>
+       You will recieve your newsletter on this mail address
+    </div>
+    <a href="/home">
+      <button class="dismiss-btn">
+        Dismiss message
+      </button>
+    </a>
+    
+  </div>
+{% else %}
+<div class="verified-status failed">
+  <div>
+    <img src="{{ url_for('static', filename = 'images/icon-failure.svg') }}" alt="">
+  </div>
+  <div class="heading">
+    {{msg}}
+  </div>
+</div>
+
+{% endif %}
+{% endblock content %}

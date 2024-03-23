@@ -1,0 +1,56 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+    
+    <div class="main admin">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="admin-added">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+      {% if form.email.errors %}
+              {% for error in form.email.errors %}
+                  <div class="error admin-error">{{ error }}</div>
+              {% endfor %}
+          {% endif %}
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="label">
+          <label for="email">{{ form.email.label }}</label>
+          
+        </div>
+        {% if form.email.errors %}
+            {{ form.email(placeholder= "email@company.com") }}
+        {% else %}
+          {{ form.email(placeholder= "email@company.com") }}
+        {% endif %}
+        <div class="form-group">
+            <div class="label">
+                {{ form.password.label }}
+            </div>
+            
+            {% if form.password.errors %}
+                {{ form.password }}
+                <div class="invalid-feedback">
+                    {% for error in form.password.errors %}
+                        <span>{{ error }}</span>
+                    {% endfor %}
+                </div>
+            {% else %}
+                {{ form.password }}
+            {% endif %}
+        </div>
+        {{ form.submit(class = "sub-button") }}
+        
+      </form>
+      <p>Not registered <a href="{{url_for('register')}}">Register</a></p>
+    </div>
+    
+    <div class="image"></div>
+  </div>
+{% endblock content %}
+  

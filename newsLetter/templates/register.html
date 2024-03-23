@@ -1,0 +1,51 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+  
+    <div class="main">
+      <div class="heading">Stay updated!</div>
+      <span>Join 60,000+ product managers receiving monthly updates on:</span>
+      <div class="article">
+        
+        <span>
+          <img src="{{ url_for('static', filename = 'images/icon-list.svg') }}" alt="">
+          Product discovery and building what matters
+        </span>
+        <span>
+          <img src="{{ url_for('static', filename = 'images/icon-list.svg') }}" alt="">
+          Measuring to ensure updates are a success
+        </span>
+        <span>
+          <img src="{{ url_for('static', filename = 'images/icon-list.svg') }}" alt="">
+          And much more!
+        </span>
+      </div>
+      <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        
+        <div class="label">
+          <label for="name">{{ form.name.label }}</label>
+        </div>
+        {{ form.name(placeholder = "Enter your name") }}
+        <div class="label">
+          <label for="email">{{ form.email.label }}</label>
+          {% if form.email.errors %}
+              {% for error in form.email.errors %}
+                  <div class="error">{{ error }}</div>
+              {% endfor %}
+          {% endif %}
+        </div>
+        {% if form.email.errors %}
+            {{ form.email(placeholder= "email@company.com") }}
+        {% else %}
+          {{ form.email(placeholder= "email@company.com") }}
+        {% endif %}
+        
+        {{ form.submit(class = "sub-button") }}
+
+      </form>
+    </div>
+    <div class="image"></div>
+  </div>
+{% endblock content %}
+  
